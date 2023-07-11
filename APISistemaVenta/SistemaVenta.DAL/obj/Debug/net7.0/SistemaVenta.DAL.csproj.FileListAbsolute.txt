@@ -1,0 +1,15 @@
+D:\02-Projects\Angular\SistemaVentas\APISistemaVenta\SistemaVenta.DAL\bin\Debug\net7.0\SistemaVenta.DAL.deps.json
+D:\02-Projects\Angular\SistemaVentas\APISistemaVenta\SistemaVenta.DAL\bin\Debug\net7.0\SistemaVenta.DAL.dll
+D:\02-Projects\Angular\SistemaVentas\APISistemaVenta\SistemaVenta.DAL\bin\Debug\net7.0\SistemaVenta.DAL.pdb
+D:\02-Projects\Angular\SistemaVentas\APISistemaVenta\SistemaVenta.DAL\obj\Debug\net7.0\SistemaVenta.DAL.csproj.AssemblyReference.cache
+D:\02-Projects\Angular\SistemaVentas\APISistemaVenta\SistemaVenta.DAL\obj\Debug\net7.0\SistemaVenta.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\02-Projects\Angular\SistemaVentas\APISistemaVenta\SistemaVenta.DAL\obj\Debug\net7.0\SistemaVenta.DAL.AssemblyInfoInputs.cache
+D:\02-Projects\Angular\SistemaVentas\APISistemaVenta\SistemaVenta.DAL\obj\Debug\net7.0\SistemaVenta.DAL.AssemblyInfo.cs
+D:\02-Projects\Angular\SistemaVentas\APISistemaVenta\SistemaVenta.DAL\obj\Debug\net7.0\SistemaVenta.DAL.csproj.CoreCompileInputs.cache
+D:\02-Projects\Angular\SistemaVentas\APISistemaVenta\SistemaVenta.DAL\obj\Debug\net7.0\SistemaVenta.DAL.dll
+D:\02-Projects\Angular\SistemaVentas\APISistemaVenta\SistemaVenta.DAL\obj\Debug\net7.0\refint\SistemaVenta.DAL.dll
+D:\02-Projects\Angular\SistemaVentas\APISistemaVenta\SistemaVenta.DAL\obj\Debug\net7.0\SistemaVenta.DAL.pdb
+D:\02-Projects\Angular\SistemaVentas\APISistemaVenta\SistemaVenta.DAL\obj\Debug\net7.0\ref\SistemaVenta.DAL.dll
+D:\02-Projects\Angular\SistemaVentas\APISistemaVenta\SistemaVenta.DAL\bin\Debug\net7.0\SistemaVenta.Model.dll
+D:\02-Projects\Angular\SistemaVentas\APISistemaVenta\SistemaVenta.DAL\bin\Debug\net7.0\SistemaVenta.Model.pdb
+D:\02-Projects\Angular\SistemaVentas\APISistemaVenta\SistemaVenta.DAL\obj\Debug\net7.0\SistemaVenta.DAL.csproj.CopyComplete
