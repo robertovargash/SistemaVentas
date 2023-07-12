@@ -68,9 +68,7 @@ namespace SistemaVenta.BLL.Servicios
         throw;
       }
       return mapper.Map<List<VentaDTO>>( ListaResultado );
-    }
-
-   
+    }   
 
     public async Task<List<ReporteDTO>> Reporte( string fechaInicio, string fechaFin )
     {
