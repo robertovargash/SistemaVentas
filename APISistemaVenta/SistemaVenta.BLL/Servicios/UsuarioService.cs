@@ -38,7 +38,7 @@ namespace SistemaVenta.BLL.Servicios
     {
       try
       {
-        var queryusuario = await usuarioRepositorio.Consultar( filtro => filtro.Correro == correo && filtro.Clave == clave );
+        var queryusuario = await usuarioRepositorio.Consultar( filtro => filtro.Correo == correo && filtro.Clave == clave );
         if( queryusuario.FirstOrDefault() == null )
         {
           throw new TaskCanceledException( "Usuario no existe" );
@@ -84,7 +84,7 @@ namespace SistemaVenta.BLL.Servicios
           throw new TaskCanceledException( "No existe el usuario" );
         }
         usuarioEncontrado.NombreCompleto = usuarioModelo.NombreCompleto;
-        usuarioEncontrado.Correro = usuarioModelo.Correro;
+        usuarioEncontrado.Correo = usuarioModelo.Correo;
         usuarioEncontrado.IdRol = usuarioModelo.IdRol;
         usuarioEncontrado.Clave = usuarioModelo.Clave;
         usuarioEncontrado.EsActivo = usuarioModelo.EsActivo;

@@ -198,10 +198,10 @@ public partial class DbventaContext : DbContext
               .HasMaxLength( 40 )
               .IsUnicode( false )
               .HasColumnName( "clave" );
-      entity.Property( e => e.Correro )
+      entity.Property( e => e.Correo )
               .HasMaxLength( 50 )
               .IsUnicode( false )
-              .HasColumnName( "correro" );
+              .HasColumnName( "correo" );
       entity.Property( e => e.EsActivo )
               .HasDefaultValueSql( "((1))" )
               .HasColumnName( "esActivo" );

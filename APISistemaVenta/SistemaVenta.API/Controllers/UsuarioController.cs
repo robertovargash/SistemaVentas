@@ -42,7 +42,7 @@ namespace SistemaVenta.API.Controllers
       try
       {
         response.Status = true;
-        response.Value = await usuarioService.ValidarCredenciales( login.Correro, login.Clave );
+        response.Value = await usuarioService.ValidarCredenciales( login.Correo, login.Clave );
       }
       catch( Exception ex )
       {

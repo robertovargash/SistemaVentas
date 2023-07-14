@@ -9,7 +9,7 @@ public partial class Usuario
 
     public string? NombreCompleto { get; set; }
 
-    public string? Correro { get; set; }
+    public string? Correo { get; set; }
 
     public int? IdRol { get; set; }
 

@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Login } from 'src/app/interfaces/login';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { UtilidadService } from 'src/app/reutilizable/utilidad.service';
 
 @Component({
   selector: 'app-login',
@@ -7,4 +12,42 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  formularioLogin: FormGroup;
+  ocultarPassword: boolean = true;
+  mostrarLoading: boolean = false;
+
+  constructor(private fb:FormBuilder, private router:Router, private _usuarioServicio:UsuarioService, private utilidadServicio: UtilidadService){
+    this.formularioLogin = this.fb.group({
+      email:['',Validators.required],
+      password:['',Validators.required],
+    });
+  }
+
+  ocultarpass(){
+    this.ocultarPassword = !this.ocultarPassword;
+  }
+
+  iniciarSesion(){
+    this.mostrarLoading = true;
+    const request: Login ={
+      correo: this.formularioLogin.value.email,
+      clave: this.formularioLogin.value.password
+    }
+    this._usuarioServicio.iniciarSesion(request).subscribe({
+      next:(data) => {
+        if(data.status == true){
+          this.utilidadServicio.guardarSesionUsuario(data.value);
+          this.router.navigate(["pages"]);
+        }else{
+          this.utilidadServicio.mostrarAlerta("Sin coincidencias", "Oops!");
+        }
+      },
+      complete: () => {
+        this.mostrarLoading = false;
+      },
+      error: () => {
+        this.utilidadServicio.mostrarAlerta("Hubo un error","Oops!");
+      }
+    });
+  }
 }
