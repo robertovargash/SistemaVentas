@@ -47,9 +47,14 @@ export class ModalUsuarioComponent implements OnInit{
     })
   }
 
+  ocultarPass(){
+    this.ocultarPassword = !this.ocultarPassword;
+  }
+
   ngOnInit(): void {
     if(this.datosUsuario != null){
       this.formularioUsuario.patchValue({
+        Idusuario: this.datosUsuario.idusuario,
         nombreCompleto:this.datosUsuario.nombreCompleto,
         correo:this.datosUsuario.correo,
         idRol:this.datosUsuario.idRol,
@@ -61,13 +66,40 @@ export class ModalUsuarioComponent implements OnInit{
 
   guardarEditar_Usuario(){
     const usuario:Usuario={
-      idUsuario: this.datosUsuario == null ? 0 : this.datosUsuario.idUsuario,
+      idusuario: this.datosUsuario == null ? 0 : this.datosUsuario.idusuario,
       nombreCompleto: this.formularioUsuario.value.nombreCompleto,
       correo: this.formularioUsuario.value.correo,
       idRol: this.formularioUsuario.value.idRol,
       rolDesripcion: "",
       clave: this.formularioUsuario.value.clave,
       esActivo: parseInt(this.formularioUsuario.value.esActivo),
+    }
+
+    if(this.datosUsuario == null){
+      this.usuarioServicio.guardar(usuario).subscribe({
+        next:(data) =>{
+          if(data.status){
+            this.utilidadServicio.mostrarAlerta("El usuario fue registrado","Success");
+            this.modalActual.close("true");
+          }else{
+            this.utilidadServicio.mostrarAlerta("No se pudo registrar el usuario", "Error");
+          }
+        },
+        error:(e)=>{}
+      });
+    }else{
+      this.usuarioServicio.editar(usuario).subscribe({
+        next:(data) =>{
+         
+          if(data.status){
+            this.utilidadServicio.mostrarAlerta("El usuario fue actualizado","Success");
+            this.modalActual.close("true");
+          }else{
+            this.utilidadServicio.mostrarAlerta("no se pudo actualizar el usuario", "Error");
+          }
+        },
+        error:(e)=>{}
+      });
     }
   }
 
