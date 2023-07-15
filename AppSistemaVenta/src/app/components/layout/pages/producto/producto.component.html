@@ -1,1 +1,58 @@
-<p>producto works!</p>
+<h1 style="margin: 20px 0px 0px 40px;">Productos</h1>
+
+<mat-card style="margin: 20px 40px 40px 40px;">
+    <mat-card-title style="padding: 20px;">
+        <button mat-raised-button color="primary" (click)="nuevoproducto()">
+            <mat-icon mat-list-icon>add</mat-icon>Nuevo
+        </button>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content class="dashboard-card-content">
+        <mat-form-field style="margin-top: 10px; width: 100%;">
+            <mat-label>Buscar</mat-label>
+            <input matInput (keyup)="aplicarFiltroTabla($event)" #input>
+        </mat-form-field>
+        <table mat-table [dataSource]="dataListaProductos" class="mat-elevation-z2">
+            <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef>Producto</th>
+                <td mat-cell *matCellDef="let producto"> {{producto.nombre}} </td>
+            </ng-container>
+            <ng-container matColumnDef="descripcionCategoria">
+                <th mat-header-cell *matHeaderCellDef>Categoria</th>
+                <td mat-cell *matCellDef="let producto"> {{producto.descripcionCategoria}} </td>
+            </ng-container>
+            <ng-container matColumnDef="stock">
+                <th mat-header-cell *matHeaderCellDef>Stock</th>
+                <td mat-cell *matCellDef="let producto"> {{producto.stock}} </td>
+            </ng-container>
+            <ng-container matColumnDef="precio">
+                <th mat-header-cell *matHeaderCellDef>Precio</th>
+                <td mat-cell *matCellDef="let producto"> {{producto.precio}} </td>
+            </ng-container>
+           
+            <ng-container matColumnDef="estado">
+                <th mat-header-cell *matHeaderCellDef>Estado</th>
+                <td mat-cell *matCellDef="let producto"> {{producto.esActivo == 1 ? 'Activo' : 'No activo'}} </td>
+            </ng-container>
+            <ng-container matColumnDef="acciones">
+                <th mat-header-cell *matHeaderCellDef style="width: 150px;"></th>
+                <td mat-cell *matCellDef="let producto">
+                    <button d-inline mat-icon-button color="primary" (click)="editarProducto(producto)">
+                        <mat-icon mat-list-icon>edit</mat-icon>
+                    </button>
+                    <button d-inline mat-icon-button color="warn" (click)="eliminarProducto(producto)">
+                        <mat-icon mat-list-icon>delete</mat-icon>
+                    </button>
+                </td>                
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+            <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">
+                    No hay coincidencias con "{{input.value}}"
+                </td>
+            </tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons/>
+    </mat-card-content>
+</mat-card>
