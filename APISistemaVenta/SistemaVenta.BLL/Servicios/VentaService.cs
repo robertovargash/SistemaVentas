@@ -50,7 +50,7 @@ namespace SistemaVenta.BLL.Servicios
           DateTime fecha_Fin = DateTime.ParseExact( fechaFin, "dd/MM/yyyy", new CultureInfo( "en-US" ) );
           ListaResultado = await query.Where( v =>
               v.FechaRegistro.Value.Date >= fecha_Inicio.Date &&
-              v.FechaRegistro.Value.Date >= fecha_Fin.Date
+              v.FechaRegistro.Value.Date <= fecha_Fin.Date
             ).Include(dv =>dv.DetalleVenta)
             .ThenInclude(p => p.IdProductoNavigation).ToListAsync();
         }

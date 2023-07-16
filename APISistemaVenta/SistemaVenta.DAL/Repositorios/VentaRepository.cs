@@ -37,7 +37,7 @@ namespace SistemaVenta.DAL.Repositorios
 
           int cantidadDigitos = 4;
           string ceros = string.Concat( Enumerable.Repeat( "0", cantidadDigitos ) );
-          string numeroVenta = ceros + cantidadDigitos.ToString();
+          string numeroVenta = ceros + correlativo.UltimoNumero.ToString();
           //0001
 
           numeroVenta = numeroVenta.Substring(numeroVenta.Length - cantidadDigitos, cantidadDigitos);
