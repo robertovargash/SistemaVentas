@@ -1,5 +1,5 @@
 export interface Sesion {
-    idUusuario:number,
+    idUsuario:number,
     nombreCompleto:string,
     correo: string,
     rolDescripcion: string

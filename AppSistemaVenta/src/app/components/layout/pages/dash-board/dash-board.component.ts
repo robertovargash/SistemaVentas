@@ -50,7 +50,6 @@ export class DashBoardComponent implements OnInit{
           this.totalingresos = data.value.totalIngresos;
           this.totalVentas = data.value.totalVentas;
           this.totalProducto = data.value.totalProductos;
-          console.log(data.value);
           const arrayData:any[] = data.value.ventasUltimaSemana;
           
           const labelTemp = arrayData.map((value) => value.fecha);
